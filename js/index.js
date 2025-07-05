@@ -53,6 +53,26 @@ let displayProducts = (() => {
     });
 });
 
-const handleAddtoCart = 
+const handleAddtoCart = (item)=>{
+    cart_item.innerHTML = '';
+
+    let {name,price} = item;
+    let li = document.createElement('li');
+    li.classList.add('list-group-item');
+    li.classList.add('d-flex');
+    li.classList.add('justify-content-between');
+    li.classList.add('lh-sm');
+    li.innerHTML = `
+        <div>
+            <h6 class="my-0">${name}</h6>
+            <small class="text-body-secondary">Brief description</small>
+        </div>
+            <span class="text-body-secondary">${price}</span>
+    `
+    cart_item.appendChild(li);
+    
+}
+
+
 
 getProducts();
