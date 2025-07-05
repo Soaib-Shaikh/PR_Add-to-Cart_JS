@@ -1,6 +1,6 @@
 let products =JSON.parse(localStorage.getItem("products")) || [];
 let product_grid = document.querySelector('.tab-content .product-grid');
-let cart_item = document.querySelector('.offcanvas .offcanvas-body .li');
+let cart_item = document.querySelector('.offcanvas .offcanvas-body ul');
 
 async function getProducts() {
     let res = await fetch('js/products.json');
@@ -53,26 +53,36 @@ let displayProducts = (() => {
     });
 });
 
-const handleAddtoCart = (item)=>{
-    cart_item.innerHTML = '';
+const handleAddtoCart = (id) =>{
+    let product = products.find(product =>product.id === id);
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Product added to cart");
+    displayCartItem();
+};
 
-    let {name,price} = item;
-    let li = document.createElement('li');
-    li.classList.add('list-group-item');
-    li.classList.add('d-flex');
-    li.classList.add('justify-content-between');
-    li.classList.add('lh-sm');
-    li.innerHTML = `
-        <div>
-            <h6 class="my-0">${name}</h6>
-            <small class="text-body-secondary">Brief description</small>
-        </div>
+const displayCartItem = () => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart_item.innerHTML = ''; 
+
+    cart.forEach(item => {
+        let li = document.createElement('li');
+        const {name,price,quantity} = item;
+        li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'lh-sm');
+        li.innerHTML = '';
+        li.innerHTML = `
+            <div>
+                <h6 class="my-0">${name}</h6>
+                <small class="text-muted">${quantity}</small>
+            </div>
             <span class="text-body-secondary">${price}</span>
-    `
-    cart_item.appendChild(li);
-    
-}
+        `;
 
+        cart_item.appendChild(li);
+    });
+};
 
+window.addEventListener("DOMContentLoaded", displayCartItem);
 
 getProducts();
