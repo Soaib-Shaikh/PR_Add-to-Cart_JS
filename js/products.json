@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "name": "Fresh Bananas",
+    "image": "images/thumb-bananas.png",
+    "price": "$2.00",
+    "unit": "1 Dozen",
+    "rating": 4.5,
+    "discount": "30%",
+    "quantity": 3
+  },
+  {
+    "id": 2,
+    "name": "Crunchy Cookies Pack",
+    "image": "images/thumb-biscuits.png",
+    "price": "$2.50",
+    "unit": "200g",
+    "rating": 4.2,
+    "discount": "20%",
+    "quantity": 1
+  },
+  {
+    "id": 3,
+    "name": "Organic Cucumbers",
+    "image": "images/thumb-cucumber.png",
+    "price": "$1.80",
+    "unit": "500g",
+    "rating": 4.3,
+    "discount": null,
+    "quantity": 1
+  },
+  {
+    "id": 4,
+    "name": "Milk Pack",
+    "image": "images/thumb-milk.png",
+    "price": "$2.99",
+    "unit": "1L",
+    "rating": 4.6,
+    "discount": "10%",
+    "quantity": 1
+  },
+  {
+    "id": 5,
+    "name": "Red Apples",
+    "image": "images/Red Apple.webp",
+    "price": "$3.50",
+    "unit": "1 Kg",
+    "rating": 4.4,
+    "discount": null,
+    "quantity": 1
+  },
+  {
+    "id": 6,
+    "name": "Whole Wheat Bread",
+    "image": "images/whole wheat bread.jpeg",
+    "price": "$2.25",
+    "unit": "1 Loaf",
+    "rating": 4.1,
+    "discount": null,
+    "quantity": 1
+  },
+  {
+    "id": 7,
+    "name": "Tuna Fish",
+    "image": "images/thumb-tuna.jpg",
+    "price": "$1.60",
+    "unit": "1 Kg",
+    "rating": 4.0,
+    "discount": "15%",
+    "quantity": 1
+  },
+  {
+    "id": 8,
+    "name": "Packaged Butter",
+    "image": "images/post-thumb-2.jpg",
+    "price": "$3.00",
+    "unit": "500g",
+    "rating": 4.7,
+    "discount": null,
+    "quantity": 1
+  },
+  {
+    "id": 9,
+    "name": "Farm Eggs",
+    "image": "images/Eggs.webp",
+    "price": "$2.75",
+    "unit": "1 Dozen",
+    "rating": 4.8,
+    "discount": null,
+    "quantity": 1
+  },
+  {
+    "id": 10,
+    "name": "Honey",
+    "image": "images/thumb-honey.jpg",
+    "price": "$3.80",
+    "unit": "250g",
+    "rating": 4.6,
+    "discount": "25%",
+    "quantity": 1
+  },
+  {
+    "id": 11,
+    "name": "Mango Juice",
+    "image": "images/Mango Juice.avif",
+    "price": "$1.25",
+    "unit": "250g",
+    "rating": 4.3,
+    "discount": null,
+    "quantity": 1
+  },
+  {
+    "id": 12,
+    "name": "Almond Butter Jar",
+    "image": "images/Almond_Butter.jpg",
+    "price": "$5.50",
+    "unit": "300g",
+    "rating": 4.6,
+    "discount": "10%",
+    "quantity": 1
+  },
+  {
+    "id": 13,
+    "name": "Herbs",
+    "image": "images/thumb-herb.jpg",
+    "price": "$4.20",
+    "unit": "1 Kg",
+    "rating": 4.5,
+    "discount": null,
+    "quantity": 1
+  },
+  {
+    "id": 14,
+    "name": "Orange Juice Bottle",
+    "image": "images/thumb-orange-juice.png",
+    "price": "$3.30",
+    "unit": "1L",
+    "rating": 4.2,
+    "discount": "5%",
+    "quantity": 1
+  },
+  {
+    "id": 15,
+    "name": "Mayonnaise",
+    "image": "images/Mayonnaise.avif",
+    "price": "$0.90",
+    "unit": "70g",
+    "rating": 4.7,
+    "discount": null,
+    "quantity": 1
+  },
+  {
+    "id": 16,
+    "name": "Fresh Carrots",
+    "image": "images/Carrots.webp",
+    "price": "$2.20",
+    "unit": "1 Kg",
+    "rating": 4.4,
+    "discount": null,
+    "quantity": 1
+  },
+  {
+    "id": 17,
+    "name": "Fresh Avocado",
+    "image": "images/thumb-avocado.png",
+    "price": "$2.75",
+    "unit": "500g",
+    "rating": 4.1,
+    "discount": "15%",
+    "quantity": 1
+  },
+  {
+    "id": 18,
+    "name": "Tomato Ketchup",
+    "image": "images/thumb-tomatoketchup.png",
+    "price": "$3.10",
+    "unit": "500ml",
+    "rating": 4.3,
+    "discount": null,
+    "quantity": 1
+  },
+  {
+    "id": 19,
+    "name": "Fresh Raspberries",
+    "image": "images/thumb-raspberries.png",
+    "price": "$1.80",
+    "unit": "1 Kg",
+    "rating": 4.2,
+    "discount": "10%",
+    "quantity": 1
+  },
+  {
+    "id": 20,
+    "name": "Fresh Tomatos",
+    "image": "images/thumb-tomatoes.png",
+    "price": "$4.75",
+    "unit": "200g",
+    "rating": 4.9,
+    "discount": null,
+    "quantity": 1
+  }
+]
