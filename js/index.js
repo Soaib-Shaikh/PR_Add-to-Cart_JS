@@ -83,6 +83,7 @@ const displayCartItem = () => {
     });
 };
 
+
 window.addEventListener("DOMContentLoaded", displayCartItem);
 
 getProducts();
