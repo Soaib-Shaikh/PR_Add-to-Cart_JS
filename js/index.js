@@ -31,7 +31,7 @@ const displayProducts = () => {
                 <h3>${name}</h3>
                 <span class="qty">1 Unit</span>
                 <span class="rating"><svg width="24" height="24"><use xlink:href="#star-solid"></use></svg> ${rating}</span>
-                <span class="price">$${price}</span>
+                <span class="price">${price}</span>
                 <div class="d-flex align-items-center justify-content-between">
                     <div class="input-group product-qty d-flex justify-content-between">
                         <button type="button" class="quantity-left-minus btn btn-danger btn-number"><svg width="16" height="16"><use xlink:href="#minus"></use></svg></button>
