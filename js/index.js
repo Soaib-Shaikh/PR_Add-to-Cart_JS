@@ -31,7 +31,7 @@ const displayProducts = () => {
                 <h3>${name}</h3>
                 <span class="qty">1 Unit</span>
                 <span class="rating"><svg width="24" height="24"><use xlink:href="#star-solid"></use></svg> ${rating}</span>
-                <span class="price">${price}</span>
+                <span class="price">$${price}</span>
                 <div class="d-flex align-items-center justify-content-between">
                     <div class="input-group product-qty d-flex justify-content-between">
                         <button type="button" class="quantity-left-minus btn btn-danger btn-number"><svg width="16" height="16"><use xlink:href="#minus"></use></svg></button>
@@ -120,7 +120,7 @@ function renderCart() {
                     <strong>${name}</strong> <span class="text-muted ms-2">Qty: ${quantity}</span>
                 </div>
                 <div class="text-end">
-                    <span class="text-muted me-3">${itemTotal.toFixed(2)}</span>
+                    <span class="text-muted me-3">$${itemTotal.toFixed(2)}</span>
                     <button class="rem_btn btn btn-sm btn-danger" data-id="${id}">Remove</button>
                 </div>
             </div>
