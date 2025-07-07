@@ -801,3 +801,117 @@ h1,h2,h3,h4,h5,h6 {
         min-height: 350px;
     }
 }
+
+.remove-btn{
+  background-color: #6995B1;
+  border-radius: 50%;
+  border: none;
+  margin-left: 1rem;
+  width: 50px;
+}
+
+/* checkout css */
+
+/* === Modern Blue Checkout UI === */
+
+body {
+  background-color: #F8F9FB;
+  font-family: 'Poppins', sans-serif;
+  color: #2C3E50;
+}
+
+.container {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+/* Header */
+h2 {
+  font-size: 32px;
+  color: #3A4BCC;
+  border-left: 6px solid #5B6DFF;
+  padding-left: 12px;
+}
+
+h4 {
+  color: #3A4BCC;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Cart Summary */
+#checkoutCart {
+  background-color: #F1F3FF;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 15px;
+  border: 1px solid #d1d8f0;
+}
+
+#checkoutCart .list-group-item {
+  background-color: #E9EDFF;
+  border: none;
+  border-bottom: 1px solid #d1d8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+#checkoutTotal {
+  color: #5B6DFF;
+  font-weight: bold;
+}
+
+/* Form Controls */
+.form-label {
+  font-weight: 600;
+  color: #2C3E50;
+}
+
+.form-control {
+  border-radius: 6px;
+  border: 1px solid #cfd6f2;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #5B6DFF;
+  box-shadow: 0 0 0 0.2rem rgba(91, 109, 255, 0.25);
+}
+
+/* Submit Button */
+.btn-indigo {
+  background-color: #5B6DFF;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-indigo:hover {
+  background-color: #3A4BCC;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  .btn {
+    font-size: 16px;
+  }
+}

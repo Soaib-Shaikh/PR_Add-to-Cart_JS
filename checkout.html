@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Optionally add Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <h2 class="mb-4 fw-bold mb-5">CHECKOUT:-</h2>
+        <div class="row">
+            <!-- Cart Summary -->
+            <div class="col-md-6">
+                <h4 class="fw-semibold mb-4">Cart Summary:</h4>
+                <ul id="checkoutCart" class="list-group mb-4 border border-2 border-warning-subtle"></ul>
+                <div class="d-flex justify-content-between fw-bold fs-5">
+                    <strong>Total:</strong> <strong id="checkoutTotal">$0.00</strong>
+                </div>
+            </div>
+
+            <!-- User Info Form -->
+            <div class="col-md-6">
+                <h4 class="fw-bold mb-3">BILLING INFO:-</h4>
+                <form id="checkoutForm">
+                    <div class="mb-3 text-black">
+                        <label class="form-label fw-bold">Full Name:</label>
+                        <input type="text" class="form-control border border-2 border-warning-subtle" required>
+                    </div>
+                    <div class="mb-3 text-black fw-bold">
+                        <label class="form-label">Email Address:</label>
+                        <input type="email" class="form-control border border-2 border-warning-subtle" required>
+                    </div>
+                    <div class="mb-3 text-black fw-bold">
+                        <label class="form-label">Shipping Address:</label>
+                        <textarea class="form-control border border-2 border-warning-subtle" rows="3"
+                            required></textarea>
+                    </div>
+                    <div class="mb-3 text-black fw-bold">
+                        <label class="form-label">Coupen Code:</label>
+                        <input type="text" class="form-control border border-2 border-warning-subtle" required>
+                    </div>
+                    <button type="submit" class="btn btn-indigo w-100 fw-bold fs-5">Place Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const checkoutCart = document.getElementById('checkoutCart');
+        const checkoutTotal = document.getElementById('checkoutTotal');
+        const checkoutForm = document.getElementById('checkoutForm');
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function renderCheckoutCart() {
+            checkoutCart.innerHTML = '';
+            let total = 0;
+
+            if (cart.length === 0) {
+                checkoutCart.innerHTML = '<li class="list-group-item text-danger fw-bold">Your cart is empty.</li>';
+                checkoutTotal.textContent = '$0.00';
+
+                if (checkoutForm) {
+                    checkoutForm.querySelector('button[type="submit"]').disabled = true;
+                }
+                return;
+            }
+
+            if (checkoutForm) {
+                checkoutForm.querySelector('button[type="submit"]').disabled = false;
+            }
+
+            cart.forEach((item, index) => {
+                const unitPrice = parseFloat(item.price.toString().replace(/[^0-9.]/g, ''));
+                const itemTotal = unitPrice * item.quantity;
+                total += itemTotal;
+
+                const li = document.createElement('li');
+                li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+
+                li.innerHTML = `
+                    <div>
+                      <strong class="text-black fs-5">${item.name}</strong><br>
+                      <small class="text-muted">Qty: ${item.quantity} × $${unitPrice.toFixed(2)}</small>
+                    </div>
+                    <div>
+                      <span class="text-muted fw-bold me-3">$${itemTotal.toFixed(2)}</span>
+                      <button class="btn btn-sm btn-danger remove-item" data-index="${index}">×</button>
+                    </div>
+                `;
+
+                checkoutCart.appendChild(li);
+            });
+
+            checkoutTotal.textContent = `$${total.toFixed(2)}`;
+
+            // Add remove functionality
+            const removeButtons = checkoutCart.querySelectorAll('.remove-item');
+            removeButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const index = parseInt(e.target.getAttribute('data-index'));
+                    cart.splice(index, 1);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    renderCheckoutCart();
+                });
+            });
+        }
+
+
+        checkoutForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (cart.length === 0) {
+                alert("Cart is empty. Cannot place order.");
+                return;
+            }
+
+            alert('Order placed successfully!');
+            localStorage.removeItem('cart');
+            cart = [];
+            renderCheckoutCart();
+            checkoutForm.reset();
+
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 100);
+        });
+
+        renderCheckoutCart();
+    </script>
+</body>
+
+</html>
