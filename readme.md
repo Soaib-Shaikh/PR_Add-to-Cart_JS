@@ -4,19 +4,26 @@ A clean, modern, and responsive **checkout and cart page** designed for online r
 
 ---
 
+## 🚀 Live Demo
+
+🔗 **Deployed on Vercel**:  
+👉 Link:- 
+
+---
+
 ## 📸 Screenshots
 
 1. Main  Page 
 
- ![Main Page](output/1.png)
+ ![Main Page](./output/1.png)
 
 2. Cart Summary
 
- ![Cart](output/3.png)
+ ![Cart](./output/2.png)
 
  3. Checkout Page
 
- ![Cart](output/3.png) 
+ ![Cart](./output/3.png) 
 
 ---
 
@@ -62,20 +69,3 @@ foodmart-checkout/
 └── README.md
 ---
 
-## 🚀 Live Demo
-
-🔗 **Deployed on Vercel**:  
-👉 Link:- 
-
----
-
-## 📦 How to Run Locally
-
-```bash
-# Clone the repo
-git clone https://github.com/yourusername/foodmart-checkout.git
-
-# Navigate into the folder
-cd foodmart-checkout
-
-# Open index.html or checkout.html in your browser
