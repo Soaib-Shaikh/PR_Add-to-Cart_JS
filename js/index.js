@@ -1,9 +1,8 @@
 let products = JSON.parse(localStorage.getItem("products")) || [];
 let product_grid = document.querySelector('.tab-content .product-grid');
 let cart_item = document.querySelector('.offcanvas .offcanvas-body ul');
-let cart_count = document.querySelector('.badge-cart'); // Badge for count
+let cart_count = document.querySelector('.badge-cart'); 
 
-// Fetch products from JSON
 async function getProducts() {
     let res = await fetch('js/products.json');
     let data = await res.json();
@@ -13,7 +12,6 @@ async function getProducts() {
     displayProducts();
 }
 
-// Display products in grid
 let displayProducts = () => {
     product_grid.innerHTML = '';
     products.forEach(product => {
@@ -64,7 +62,6 @@ let displayProducts = () => {
     });
 };
 
-// Add product to cart
 const handleAddtoCart = (id) => {
     let product = products.find(product => product.id === id);
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -75,10 +72,9 @@ const handleAddtoCart = (id) => {
     alert("Product added to cart");
 
     displayCartItem();
-    updateCartCount(); // Update badge
+    updateCartCount(); 
 };
 
-// Display cart items in side panel
 const displayCartItem = () => {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart_item.innerHTML = '';
@@ -88,26 +84,26 @@ const displayCartItem = () => {
         const { name, price, quantity } = item;
 
         li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'lh-sm');
+        li.innerHTML = '';
         li.innerHTML = `
             <div>
                 <h6 class="my-0">${name}</h6>
-                <small class="text-muted">${quantity || '1 unit'}</small>
+                <small class="text-muted">${quantity}</small>
             </div>
             <span class="text-body-secondary">${price}</span>
+            
         `;
         cart_item.appendChild(li);
     });
 
-    updateCartCount(); // Update count when displaying
+    updateCartCount(); 
 };
 
-// Update cart badge count
 const updateCartCount = () => {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart_count.textContent = cart.length;
 };
 
-// On page load
 window.addEventListener("DOMContentLoaded", () => {
     displayCartItem();
     updateCartCount();
